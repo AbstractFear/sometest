@@ -8,7 +8,6 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     public $username;
     public $password;
     public $authKey;
-    public $accessToken;
 
     private static $users = [
         '100' => [
@@ -35,21 +34,7 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     {
         return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function findIdentityByAccessToken($token, $type = null)
-    {
-        foreach (self::$users as $user) {
-            if ($user['accessToken'] === $token) {
-                return new static($user);
-            }
-        }
-
-        return null;
-    }
-
+    
     /**
      * Finds user by username
      *
@@ -100,5 +85,28 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     public function validatePassword($password)
     {
         return $this->password === $password;
+    }
+
+    public function generateAuthKey() 
+    {
+        return $this->auth_key = Yii::security->
+    }
+
+    /**
+     * Generates password hash from password and sets it to the model
+     *
+     * @param string $password
+     */
+    public function setPassword($password)
+    {
+        $this->password_hash = Yii::$app->security->generatePasswordHash($password);
+    }
+ 
+    /**
+     * Generates "remember me" authentication key
+     */
+    public function generateAuthKey()
+    {
+        $this->auth_key = Yii::$app->security->generateRandomString();
     }
 }

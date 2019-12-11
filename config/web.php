@@ -70,6 +70,17 @@ $config = [
             ],
         ],
     ],
+    'modules' => [
+        'user' => [
+            'class' => 'dektrium\user\Module',
+            'controllerMap' => [
+                'admin' => [
+                    'class'  => 'dektrium\user\controllers\AdminController',
+                    'layout' => '//admin-layout',
+                ],
+            ],
+        ],
+    ],
     'params' => $params,
 ];
 

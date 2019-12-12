@@ -14,6 +14,9 @@ $config = [
         '@tests' => '@app/tests',
     ],
     'components' => [
+        'authManager' => [
+            'class' => 'dektrium\rbac\components\PhpManager',
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -33,7 +36,9 @@ $config = [
             'class' => 'yii\faker\FixtureController',
         ],
     ],
-    
+    'modules' => [
+        'rbac' => 'dektrium\rbac\RbacConsoleModule',
+    ],
 ];
 
 if (YII_ENV_DEV) {

@@ -12,6 +12,9 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'authManager' => [
+            'class' => 'dektrium\rbac\components\DbManager',
+        ],
         'assetManager' => [
             // override bundles to use local project files :
             'bundles' => [
@@ -78,6 +81,7 @@ $config = [
             'cost' => 12,
             'admins' => ['admin']
         ],
+        'rbac' => 'dektrium\rbac\RbacWebModule',
     ],
     'params' => $params,
 ];

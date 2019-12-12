@@ -28,7 +28,18 @@ $config = [
                     'sourcePath' => '@app/assets/source/bootstrap/dist',
                     'js' => [
                         YII_ENV_DEV ? 'js/bootstrap.js' : 'js/bootstrap.min.js',
-                    ]
+                    ],
+                ],
+                'yii\jui\JuiAsset' => [
+                    'sourcePath' => null,
+                    'baseUrl' => 'https://code.jquery.com/ui/1.12.1',
+                    'js' => [
+                        'jquery-ui.min.js'
+                    ],
+                ],
+                'yii\jui\DatePickerLanguageAsset' => [
+                    'sourcePath' => null,
+                    'baseUrl' => 'https://code.jquery.com/ui/1.12.1',
                 ],
             ],
         ],

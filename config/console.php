@@ -15,7 +15,7 @@ $config = [
     ],
     'components' => [
         'authManager' => [
-            'class' => 'dektrium\rbac\components\PhpManager',
+            'class' => 'dektrium\rbac\components\DbManager',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',

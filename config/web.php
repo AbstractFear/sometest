@@ -41,6 +41,9 @@ $config = [
                     'sourcePath' => null,
                     'baseUrl' => 'https://code.jquery.com/ui/1.12.1',
                 ],
+                'kartik\form\ActiveFormAsset' => [
+                    'bsDependencyEnabled' => false // do not load bootstrap assets for a specific asset bundle
+                ],
             ],
         ],
         'view' => [
@@ -92,7 +95,10 @@ $config = [
             'cost' => 12,
             'admins' => ['admin']
         ],
-        'rbac' => 'dektrium\rbac\RbacWebModule',
+        'rbac' => [
+            'class' => 'dektrium\rbac\RbacWebModule',
+            'admins' => ['Shigure'],
+        ],
     ],
     'params' => $params,
 ];

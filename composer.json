@@ -21,7 +21,8 @@
         "yiisoft/yii2-bootstrap4": "^2.0",
         "dektrium/yii2-user": "^0.9.14",
         "dektrium/yii2-rbac": "^1.0",
-        "yiisoft/yii2-jui": "^2.0"
+        "yiisoft/yii2-jui": "^2.0",
+        "kartik-v/yii2-widget-select2": "^2.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

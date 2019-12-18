@@ -11,9 +11,23 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'language' => 'ru-RU',
     'components' => [
         'authManager' => [
             'class' => 'dektrium\rbac\components\DbManager',
+        ],
+        'i18n' => [
+        'translations' => [
+            'app*' => [
+                'class' => 'yii\i18n\PhpMessageSource',
+                //'basePath' => '@app/messages',
+                //'sourceLanguage' => 'en-US',
+                'fileMap' => [
+                    'app'       => 'app.php',
+                    'app/error' => 'error.php',
+                    ],
+                ],
+            ],
         ],
         'assetManager' => [
             // override bundles to use local project files :
